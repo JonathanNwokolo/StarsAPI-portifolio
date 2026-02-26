@@ -1,5 +1,5 @@
 {
-  "name": "starsapi-portifolio",
+  "name": "starsapi",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonathanNwokolo/StarsAPI-portifolio.git"
+    "url": "git+https://github.com/JonathanNwokolo/starsapi.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JonathanNwokolo/StarsAPI-portifolio/issues"
+    "url": "https://github.com/JonathanNwokolo/starsapi/issues"
   },
-  "homepage": "https://github.com/JonathanNwokolo/StarsAPI-portifolio#readme",
+  "homepage": "https://github.com/JonathanNwokolo/starsapi#readme",
   "description": "",
   "dependencies": {
     "cors": "^2.8.6",
