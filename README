@@ -1,0 +1,77 @@
+# ⭐ StarsAPI — Sistema de Curtidas para Portfólio
+
+API REST desenvolvida para gerenciar um contador de **estrelas** (curtidas) em tempo real para o meu portfólio pessoal. Construída com foco em escalabilidade e segurança, seguindo as melhores práticas de desenvolvimento Back-end.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+| Tecnologia        | Descrição                                     |
+| ----------------- | --------------------------------------------- |
+| **Node.js**       | Ambiente de execução JavaScript no servidor   |
+| **Express**       | Framework minimalista para rotas e middleware |
+| **MongoDB Atlas** | Banco de dados NoSQL em nuvem                 |
+| **Mongoose**      | Modelagem de objetos e conexão com o MongoDB  |
+| **CORS**          | Middleware para requisições entre domínios    |
+| **Dotenv**        | Gerenciamento seguro de variáveis de ambiente |
+
+---
+
+## 🛠️ Funcionalidades
+
+- **Leitura de Dados (GET)** — Busca o número total de estrelas armazenado no banco de dados.
+- **Incremento de Dados (POST)** — Adiciona uma nova estrela ao contador oficial.
+
+---
+
+## 🔗 Endpoints da API
+
+| Método | Endpoint     | Descrição                                                |
+| ------ | ------------ | -------------------------------------------------------- |
+| `GET`  | `/api/stars` | Retorna o JSON com a contagem atual (ex: `{"count": 6}`) |
+| `POST` | `/api/stars` | Incrementa o contador no MongoDB e retorna o novo valor  |
+| `GET`  | `/`          | Rota de teste para verificar se o servidor está online   |
+
+---
+
+## ⚙️ Configuração Local
+
+**1. Clone o repositório:**
+
+```bash
+git clone https://github.com/JonathanNwokolo/starsapi.git
+```
+
+**2. Instale as dependências:**
+
+```bash
+npm install
+```
+
+**3. Configure o arquivo `.env`:**
+
+Crie um arquivo `.env` na raiz do projeto e adicione sua string de conexão:
+
+```env
+URL_DO_BANCO=sua_url_do_mongodb_atlas
+```
+
+**4. Inicie o servidor:**
+
+```bash
+npm start
+```
+
+---
+
+## 🌍 Deploy
+
+A API está hospedada no **Render**, conectada ao banco de dados **MongoDB Atlas**, e serve o Front-end hospedado na **Vercel**.
+
+---
+
+## 👨‍💻 Autor
+
+**Jonathan Nwokolo**
+
+- Estudante de Análise e Desenvolvimento de Sistemas (ADS)
