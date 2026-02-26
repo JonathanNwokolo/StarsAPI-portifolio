@@ -4,19 +4,27 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+
+// IMPORTANTE: O CORS permite que o seu site da Vercel converse com o Render
 app.use(cors());
 app.use(express.json());
 
+// Conexão com o Banco
 mongoose.connect(process.env.URL_DO_BANCO)
-  .then(() => console.log('✅ Conectado ao MongoDB do Portfólio com sucesso!'))
-  .catch((erro) => console.log('❌ Erro ao conectar:', erro));
+  .then(() => console.log('✅ Conectado ao MongoDB com sucesso!'))
+  .catch((erro) => console.log('❌ Erro no MongoDB:', erro));
 
 const starSchema = new mongoose.Schema({
   count: { type: Number, default: 0 }
 });
 const Star = mongoose.model('Star', starSchema);
 
-// Rota GET consertada (o código fica todo dentro das chaves)
+// Rota de teste (Abra o link da API no navegador para ver isso)
+app.get('/', (req, res) => {
+  res.send('API de Estrelas está viva e operante! 🚀');
+});
+
+// Rota GET (Para o site ler o número de estrelas)
 app.get('/api/stars', async (req, res) => {
   try {
     let stars = await Star.findOne(); 
@@ -27,7 +35,7 @@ app.get('/api/stars', async (req, res) => {
   }
 });
 
-// Rota POST (para adicionar a curtida)
+// Rota POST (Para o site adicionar uma estrela - ESSA É A QUE DEU 404!)
 app.post('/api/stars', async (req, res) => {
   try {
     let stars = await Star.findOne();
@@ -43,7 +51,8 @@ app.post('/api/stars', async (req, res) => {
   }
 });
 
-const porta = process.env.PORTA || 3000;
-app.listen(porta, () => {
-  console.log(`🚀 API das Estrelas rodando na porta ${porta}`);
+// IMPORTANTE PARA O RENDER: Ele usa a variável PORT ou a 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
